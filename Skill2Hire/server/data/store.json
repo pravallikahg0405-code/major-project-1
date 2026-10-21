@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "id": "demo_user_001",
+      "fullName": "Demo Candidate",
+      "email": "demo@skill2hire.com",
+      "passwordHash": "$2a$10$06WkuxjVdEWVxuVMJ.d93uhEwKnOa3b951/nO125JQrYD88Gi00N6",
+      "targetRole": "Full Stack Developer",
+      "skills": [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Node.js",
+        "Express",
+        "SQL",
+        "Git"
+      ],
+      "createdAt": "2026-09-29T10:51:19.239Z",
+      "updatedAt": "2026-09-29T10:51:19.243Z"
+    },
+    {
+      "id": "usr_1790779220708_e1ark",
+      "fullName": "pravalika h g",
+      "email": "pravallikahg0405@gmail.com",
+      "passwordHash": "$2a$10$6XEm/KCaavFIqnA9XdK4TuP5N6sN5tpS7Qe5a266DOppp6826HlrW",
+      "targetRole": "Full Stack Developer",
+      "skills": [],
+      "createdAt": "2026-09-30T14:40:20.708Z",
+      "updatedAt": "2026-09-30T14:40:20.708Z"
+    }
+  ],
+  "reports": [],
+  "resumes": [],
+  "savedJobs": []
+}
