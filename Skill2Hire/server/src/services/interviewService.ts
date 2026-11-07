@@ -19,7 +19,21 @@ export class InterviewService {
     const rolePrerequisites: Record<string, string[]> = {
       'Frontend Developer': ['JavaScript', 'HTML5', 'CSS3', 'React'],
       'Backend Developer': ['Node.js', 'Express', 'SQL', 'REST API'],
-      'Full Stack Developer': ['JavaScript', 'React', 'Node.js', 'Database (SQL/NoSQL)'],
+      'Full Stack Developer': ['JavaScript', 'React', 'Node.js', 'Database'],
+      'Java': ['Java', 'Spring Boot', 'SQL', 'REST API'],
+      'Python': ['Python', 'Django', 'SQL', 'REST API'],
+      'DevOps': ['Docker', 'Kubernetes', 'Linux', 'CI/CD'],
+      'Cloud': ['AWS', 'Docker', 'Linux', 'Cloud Architecture'],
+      'Data Scientist': ['Python', 'Machine Learning', 'Pandas', 'SQL'],
+      'Data Analyst': ['SQL', 'Python', 'Excel', 'Data Visualization'],
+      'AI': ['Python', 'Prompt Engineering', 'LangChain', 'Vector Database'],
+      'Mobile': ['React Native', 'JavaScript', 'Mobile UI', 'REST API'],
+      'Cybersecurity': ['Networking', 'Linux', 'Security Fundamentals', 'Cryptography'],
+      'QA': ['Selenium', 'JavaScript', 'Test Automation', 'API Testing'],
+      'UI/UX': ['Figma', 'Wireframing', 'User Research', 'Prototyping'],
+      'Product Manager': ['Product Strategy', 'Agile', 'Roadmapping', 'User Stories'],
+      'Database': ['SQL', 'Database Design', 'ETL', 'PostgreSQL'],
+      'Systems': ['C++', 'C', 'Data Structures', 'Operating Systems'],
       'Software Engineer': ['Data Structures', 'Algorithms', 'OOP', 'Git']
     };
 
@@ -185,6 +199,94 @@ export class InterviewService {
         'Explain the React Virtual DOM diffing reconciliation algorithm and how keys help React optimize render passes.',
         'How do you manage client-side state across deeply nested components in modern React (e.g. Context API, Redux Toolkit, or Zustand), and what are the performance trade-offs?',
         'Describe how you optimize Core Web Vitals (LCP, FID, CLS) in a heavy single-page application using code splitting, lazy loading, and asset caching.'
+      ];
+    }
+
+    if (roleLower.includes('devops') || roleLower.includes('cloud') || roleLower.includes('sre')) {
+      return [
+        'Explain the core differences between containerization with Docker and virtualization with hypervisors, and how you architect multi-stage Docker builds to minimize production image size.',
+        'How do you design a high-availability Kubernetes deployment with liveness/readiness probes, horizontal pod autoscaling, and zero-downtime rolling updates?',
+        'Describe how you implement Infrastructure as Code (IaC) using Terraform or AWS CloudFormation, and how your automated CI/CD pipeline prevents broken configurations in production.'
+      ];
+    }
+
+    if (roleLower.includes('data scientist') || roleLower.includes('machine learning') || roleLower.includes('ml engineer')) {
+      return [
+        'Explain the bias-variance trade-off in machine learning models and concrete techniques you use to combat overfitting during training.',
+        'How do you evaluate classification models when dealing with severely imbalanced datasets? Why is ROC-AUC or F1-Score preferable over basic accuracy?',
+        'Walk through your end-to-end pipeline for data preprocessing, feature engineering, and deploying a trained ML model as a real-time prediction microservice.'
+      ];
+    }
+
+    if (roleLower.includes('data analyst') || roleLower.includes('business intelligence')) {
+      return [
+        'Explain the difference between WHERE and HAVING in SQL, and walk through how you would construct a SQL query using window functions (e.g. ROW_NUMBER or RANK) to find top sales by region.',
+        'How do you approach cleaning and validating messy datasets in Pandas or Excel before performing statistical correlation and reporting to executive stakeholders?',
+        'Describe how you design an executive KPI dashboard in Tableau or PowerBI to clearly convey complex retention, churn, and revenue trends without overwhelming users.'
+      ];
+    }
+
+    if (roleLower.includes('ai') || roleLower.includes('llm') || roleLower.includes('genai')) {
+      return [
+        'Explain the architecture of a Retrieval-Augmented Generation (RAG) system: how do chunking strategies, embeddings, and vector databases impact retrieval quality and latency?',
+        'How do you mitigate common generative AI issues such as hallucinations, prompt injection attacks, and token context window limits in production applications?',
+        'Compare fine-tuning vs few-shot prompt engineering. Under what circumstances would you invest in parameter-efficient fine-tuning (PEFT/LoRA) for a custom enterprise model?'
+      ];
+    }
+
+    if (roleLower.includes('java') || roleLower.includes('spring')) {
+      return [
+        'Explain the Java Memory Model (Heap vs Stack, Metaspace, and Garbage Collection generations), and how Spring Boot manages Bean lifecycles with Dependency Injection.',
+        'How do you resolve Hibernate / JPA N+1 query performance problems and implement database connection pooling with HikariCP in high-throughput enterprise systems?',
+        'Describe how you design distributed microservices in Spring Cloud with service discovery, API gateways, and distributed tracing.'
+      ];
+    }
+
+    if (roleLower.includes('python') || roleLower.includes('django') || roleLower.includes('fastapi')) {
+      return [
+        'Explain how Python handles concurrency with asyncio compared to multithreading and multiprocessing, considering the Global Interpreter Lock (GIL).',
+        'In FastAPI or Django REST Framework, how do you handle request validation, database connection pooling, and background worker task queues with Celery and Redis?',
+        'How do you optimize slow database ORM queries and implement efficient database indexing strategies in Python web backends?'
+      ];
+    }
+
+    if (roleLower.includes('mobile') || roleLower.includes('android') || roleLower.includes('ios')) {
+      return [
+        'Compare React Native / Flutter cross-platform architecture with native Android (Kotlin) / iOS (Swift). How does the React Native new architecture (Fabric and TurboModules) eliminate performance bridges?',
+        'How do you handle offline-first data caching, local SQLite/AsyncStorage persistence, and background sync when mobile network connectivity drops?',
+        'Describe how you profile and optimize mobile app launch times, frame drops (60fps UI), and memory consumption on lower-end devices.'
+      ];
+    }
+
+    if (roleLower.includes('security') || roleLower.includes('cyber')) {
+      return [
+        'Walk through the OWASP Top 10 vulnerabilities (e.g. SQLi, XSS, Broken Access Control, SSRF) and specific defensive coding measures you implement to mitigate each.',
+        'Explain the cryptographic difference between symmetric (AES) and asymmetric (RSA/ECC) encryption, and how TLS/HTTPS establishes a secure handshake.',
+        'How do you implement Zero Trust architecture and secure JWT authentication with refresh token rotation and CSRF protection?'
+      ];
+    }
+
+    if (roleLower.includes('qa') || roleLower.includes('test')) {
+      return [
+        'Explain the Test Automation Pyramid (Unit, Integration, E2E) and how you design reliable, maintainable test suites using the Page Object Model (POM) in Playwright or Cypress.',
+        'How do you identify, debug, and eliminate flaky automated tests in continuous integration (CI) pipelines?',
+        'Describe your strategy for automated API regression testing using tools like Postman, Newman, or Jest to validate payloads, status codes, and response times.'
+      ];
+    }
+
+    if (roleLower.includes('ui') || roleLower.includes('ux') || roleLower.includes('designer')) {
+      return [
+        'Describe your end-to-end design process from user research, wireframing, and interactive prototyping to developer handoff in Figma.',
+        'How do you establish and maintain a scalable design system using Atomic Design principles and ensure strict accessibility compliance (WCAG 2.1 AA)?',
+        'Can you share an example of a difficult UX challenge where usability testing or heuristic evaluation caused you to pivot your design solution?'
+      ];
+    }
+
+    if (roleLower.includes('product manager') || roleLower.includes('tpm')) {
+      return [
+        'How do you prioritize competing product feature requests from customers, sales, and engineering using frameworks like RICE or MoSCoW?',
+        'Describe how you define Product Success Metrics (North Star Metric, leading and lagging KPIs) and run A/B experiments to validate product hypotheses.',
+        'How do you manage communication and resolve disagreements between technical engineering teams and non-technical business stakeholders?'
       ];
     }
 

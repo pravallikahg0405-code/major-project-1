@@ -31,12 +31,16 @@ const popularRoleSuggestions = [
 ];
 
 const popularLocationPresets = [
-  'Bengaluru, India',
-  'Hyderabad, India',
   'Pune, India',
-  'Remote',
+  'Hyderabad, India',
+  'Bengaluru, India',
+  'Mumbai, India',
+  'Delhi NCR, India',
+  'Chennai, India',
   'San Francisco, CA',
-  'London, UK'
+  'New York, NY',
+  'London, UK',
+  'Remote'
 ];
 
 export const JobSuggestionsPage: React.FC = () => {
